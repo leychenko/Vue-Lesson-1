@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>task_4</title>
+  </head>
+  <body>
+    <main class="page1">
+      <div class="page1__container">
+        <h2>Задача №4</h2>
+        <p class="text">“Рахунок у банку”</p>
+        <div>
+          Вимоги:
+          <p>
+            1) Спочатку сума дорівнює 0грн. Змінити суму у гривнях можна або
+            зарахуванням на рахунок, або зняттям.
+          </p>
+          <p>
+            2) Сума автоматично переводиться у долари та євро (фіксований курс
+            задається у data).
+          </p>
+          <p>
+            3) можливість зарахувати суму (контролювати, щоб не була від’ємною)
+          </p>
+          <p>
+            4) можливість зняти (щоб не можна зняти більше ніж є на рахунку)
+          </p>
+          <p>
+            5) при виконанні зняття і зарахування коштів вираховувати 3% від
+            суми (відображати кількість відсотків автоматично)
+          </p>
+
+          <p>
+            При зміні суми : - якщо було зняття, то суму відоражати червоним -
+            якщо було зарахування, то суму відображати зеленим Якщо сума валюти
+            менша за 100 то відображати червоним кольором, інакше - зеленим
+          </p>
+        </div>
+        <div class="page__task task task-page" id="app4">
+          <div class="task-page__title">
+            Баланс рахунку :<span>{{totalBalance}} грн.</span>
+          </div>
+          <div class="task__line">
+            <label for="input"><p>Введіть суму</p></label>
+            <input
+              autocomplete="off"
+              type="number"
+              id="input"
+              v-model="inpAdd"
+              class="task__input"
+            />
+          </div>
+
+          <button type="submit" @click="addMoney" class="button">
+            Внести
+          </button>
+          <div class="task__line">
+            <label for="input"><p>Введіть суму</p></label>
+            <input
+              autocomplete="off"
+              type="number"
+              id="input"
+              v-model="inpDecr"
+              class="task__input"
+            />
+          </div>
+          <button type="submit" @click="withdraw" class="button">
+            Зняти
+          </button>
+          <div class="page__result result">
+            <div class="error">{{message}}</div>
+            <p>Комісія - <span> {{transactionCost}} грн.</span></p>
+            <p>
+              В долларах -
+              <span :class="getColorForCurrency">
+                {{convertToDollars()}} $</span
+              >
+            </p>
+            <p>
+              В євро -
+              <span :class="getColorForCurrency"> {{convertToEuro()}} Є</span>
+            </p>
+          </div>
+        </div>
+
+        <script src="scriprt4.js"></script>
+      </div>
+    </main>
+  </body>
+</html>

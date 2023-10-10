@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<title>task_2</title>
+</head>
+<body>
+	<main class="page1">
+		<div class="page1__container">
+			<h2>Задача №2</h2>
+			<p class="text"> Вводиться номер місяця. Автоматично виводити рекомендований одяг (зима – пальто, літо – шорти ….). Також автоматично виводити зображення з відповідним зображенням лісу (зима – ліс зі снігом, осінь – жовтий ліс, …).</p>
+			<div class="page__task task" id="app2">
+						<div class="task__line">
+							<label for="input"><p>Введіть номер місяця</p></label>
+							<input autocomplete="off" type="number"  id="input" v-model="month" class="task__input">
+						</div>
+						<div class="page__result result" >
+							<p>Сезон :<span>{{nameSeason}}</span></p>
+						<p>Рекомендація по одягу : {{getSeason()}}<span>{{clothes}}</span></p>
+						<div class="image">
+							<img :src="img" alt="image">
+						</div>
+					</div>
+					</div>
+			<script src="scriprt2.js"></script>
+		</div>
+	</main>
+</body>
+</html>

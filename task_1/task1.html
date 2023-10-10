@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+	 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>task_1</title>
+  </head>
+  <body>
+    <main class="page1">
+      <div class="page1__container">
+        <h2>Задача №1</h2>
+        <p class="text">
+          Задача 1. Вводиться кількість пасажирів. Вивести: скільки потрібно
+          автобусів (кожен автобус на 20 місць) скільки пляшок води (кожному
+          пасажиру 2 пляшки) скільки бутербродів (кожному пасажиру 3 бутерброди)
+          .
+        </p>
+					<div class="page__task task" id="app">
+						<div class="task__line">
+							<label for="input"><p>Введіть кількість пасажирів</p></label>
+							<input autocomplete="off" type="number"  id="input" v-model="passenger" class="task__input">
+						</div>
+						<div class="page__result result" >
+						<p>Потрібно автобусів - <span > {{countBus()}}</span></p>
+						<p>Потрібно пляшок води - <span > {{countBottleOfWater()}}</span></p>
+						<p>Потрібно бутербродів - <span >{{countSandwich()}}</span></p>
+					</div>
+					</div>
+        <script src="scriprt1.js"></script>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<title>task_3</title>
+</head>
+<body>
+	<main class="page3">
+		<div class="page3__container">
+			<h2>Задача №3</h2>
+			<p class="text">Задано початок та кінець діапазону. При натисканні на кнопку випадковим чином генерувати значення з вказаного діапазону та відображати його. </p>
+			<div class="page__task task" id="app3">
+						<div class="task__line">
+							<label for="input"><p>Значення диапазону від</p></label>
+							<input autocomplete="off" type="number"  id="input" v-model="inpMin" class="task__input">
+						</div>
+						<div class="task__line">
+							<label for="input"><p>Значення диапазону до</p></label>
+							<input autocomplete="off" type="number"  id="input" v-model="inpMax" class="task__input">
+						</div>
+						<div class="page__result result" >
+							<button type="submit" @click="getRandomNum()"  class="button">Сгенерувати</button>
+						<p>Сгенероване число - <span > {{randomNum}}</span></p>
+					</div>
+					</div>
+			<script src="scriprt3.js"></script>
+		</div>
+	</main>
+</body>
+</html>
